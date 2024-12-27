@@ -1,0 +1,44 @@
+.site-mark{
+    width: 3vw;
+}
+
+.site-mark-container{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.site-title{
+    font-family: "Desyrel";
+    font-size: 2vw;
+    font-weight: bold;
+    color: #393535;
+    user-select: none;
+}
+
+.site-title > span{
+    font-family: "Dancing Script";
+    font-weight: bold;
+    font-size: 2.3vw;
+}
+
+
+
+.footer-mark-container{
+    display: flex;
+    align-items: center;
+}
+
+.footer-mark-container > img{
+    width: 2vw;
+}
+
+.footer-site-title{
+    font-family: "Desyrel";
+    font-size: 1vw;
+    font-weight: bold;
+    color: #393535;
+    -webkit-user-select: none;
+    user-select: none;
+}

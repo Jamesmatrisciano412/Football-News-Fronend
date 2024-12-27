@@ -1,9 +1,14 @@
 import React from 'react';
+import LandJoin from '../../compoents/LandJoin/LandJoin';
 import "./Landing.css";
+import Introduction from '../../compoents/Introduction/Introduction';
 
 function Landing() {
   return (
-    <div>Landing</div>
+    <div>
+      <LandJoin />
+      <Introduction />
+    </div>
   )
 }
 

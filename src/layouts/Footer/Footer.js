@@ -6,6 +6,7 @@ import { Box, Divider, Grid2 } from '@mui/material';
 import { Link } from 'react-router';
 import { Twitter, YouTube, Facebook, Instagram } from '@mui/icons-material';
 import Mark from "../../assets/images/sitemark.png";
+import { SiteSmallMark } from '../../compoents/SiteMark/SiteMark';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
@@ -74,10 +75,7 @@ function Index() {
           <Divider />
           <Grid2 container className="product-info">
             <Grid2 size={{ xs: 6, md: 8 }}>
-              <div className='footer-mark-container'>
-                <img src={Mark} alt='site-mark' />
-                <span className='footer-site-title'>Football <span>News</span></span>
-              </div>
+              <SiteSmallMark />
             </Grid2>
             <Grid2 size={{ xs: 6, md: 4 }}>
               © 2024 Football News

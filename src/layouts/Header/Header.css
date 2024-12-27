@@ -1,6 +1,9 @@
 .header-container{
+    position: sticky;
+    top: 0;
     padding: 1vh 12vw;
     border-bottom: 1px solid #a19b9b66;
+    background-color: white;
 }
 
 .user-container{
@@ -29,29 +32,4 @@
 
 .user-container > button:nth-child(2):hover{
     border-color: #75737d;
-}
-
-.site-mark{
-    width: 3vw;
-}
-
-.site-mark-container{
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.site-title{
-    font-family: "Desyrel";
-    font-size: 2vw;
-    font-weight: bold;
-    color: #393535;
-    user-select: none;
-}
-
-.site-title > span{
-    font-family: "Dancing Script";
-    font-weight: bold;
-    font-size: 2.3vw;
 }

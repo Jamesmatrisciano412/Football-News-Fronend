@@ -1,0 +1,17 @@
+.join-us-container{
+    background-image: linear-gradient(0deg, #522db8 0%, #1c7ce0 100%);
+    color: white;
+    text-align: center;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    font-size: 20px;
+}
+
+.join-us-container > p{
+    margin-bottom: 1vh;
+}
+
+.join-us-container button {
+    color: white;
+    border-color: white;
+}
