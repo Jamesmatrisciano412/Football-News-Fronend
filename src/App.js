@@ -1,15 +1,20 @@
 import React from "react";
-import Header from "./layouts/Header/Index";
-import Content from "./layouts/Content/Index";
-import Footer from "./layouts/Footer/Index";
+import {Route, Routes, BrowserRouter as Router} from "react-router-dom";
+import Header from "./layouts/Header/Header";
+import Content from "./layouts/Content/Content";
+import Footer from "./layouts/Footer/Footer";
+import "./App.css";
 
 function App() {
   return (
-    <>
+    <Router>
+
       <Header />
-      <Content />
+        <Routes>
+          <Route exact path="/" element={<Content />} />
+        </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 

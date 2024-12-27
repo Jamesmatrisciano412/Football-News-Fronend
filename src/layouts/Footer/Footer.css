@@ -1,0 +1,71 @@
+.footer-container{
+    background-color: #f5f5fa;
+    border-top: 1px solid #a19b9b66;
+    padding: 1vh 12vw;
+}
+
+.follow-title{
+    color: rgb(70, 69, 69);
+}
+
+.follow-container{
+    display: flex;
+    justify-content: center;
+}
+
+.follow-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.follow-container > div{
+    background-color: rgb(255, 255, 255);
+    border-radius: 6px;
+    padding: 2vh 1vw;
+    font-size: 13px;
+    display: block;
+}
+
+.follow-container > div p{
+    margin: 3px;
+}
+
+.follow-container > div p:nth-child(3){
+    font-weight: bold;
+}
+
+.product-info-container{
+    margin-top: 4vh;
+    margin-bottom: 2vh;
+}
+
+.product-info{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: -2vh;
+}
+
+.footer-mark-container{
+    display: flex;
+    align-items: center;
+}
+
+.footer-mark-container > img{
+    width: 2vw;
+}
+
+.footer-site-title{
+    font-family: "Desyrel";
+    font-size: 1vw;
+    font-weight: bold;
+    color: #393535;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.footer-site-title > span{
+    font-family: "Dancing Script";
+    font-weight: bold;
+    font-size: 1.3vw;
+}

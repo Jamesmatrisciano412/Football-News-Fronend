@@ -1,0 +1,57 @@
+.header-container{
+    padding: 1vh 12vw;
+    border-bottom: 1px solid #a19b9b66;
+}
+
+.user-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.user-container > button {
+    margin-left: 1vw;
+    text-transform: none ;
+}
+
+.user-container > button:first-child{
+    color: black;
+    border-color: grey;
+}
+
+.user-container > button:first-child:hover{
+    border-color: black;
+}
+
+.user-container > button:nth-child(2){
+    background-color: #1a1a1a;
+}
+
+.user-container > button:nth-child(2):hover{
+    border-color: #75737d;
+}
+
+.site-mark{
+    width: 3vw;
+}
+
+.site-mark-container{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.site-title{
+    font-family: "Desyrel";
+    font-size: 2vw;
+    font-weight: bold;
+    color: #393535;
+    user-select: none;
+}
+
+.site-title > span{
+    font-family: "Dancing Script";
+    font-weight: bold;
+    font-size: 2.3vw;
+}
