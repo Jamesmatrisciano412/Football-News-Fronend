@@ -7,9 +7,11 @@ import { useState } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import { Menu } from "@mui/material";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import { useNavigate } from "react-router";
 
 export default function Header() {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
+  const navigate = useNavigate();
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -20,7 +22,6 @@ export default function Header() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
 
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
@@ -39,10 +40,10 @@ export default function Header() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
+      <MenuItem onClick={() => navigate("signin")}>
         <p>Sign in</p>
       </MenuItem>
-      <MenuItem>
+      <MenuItem onClick={() => navigate("/join")}>
         <p>Join</p>
       </MenuItem>
     </Menu>
@@ -53,18 +54,18 @@ export default function Header() {
       <Container maxWidth="xl">
         <Grid2 container>
           <Grid2 size={{ xs: 11, md: 8 }}>
-            <SiteLargeMark />
+            <SiteLargeMark onClick={() => navigate("/")} />
           </Grid2>
           <Grid2
             size={{ xs: 0, md: 4 }}
             sx={{ display: { xs: "none", md: "flex" } }}
             className="user-container"
           >
-            <Button variant="outlined" size="large">
+            <Button variant="outlined" size="large"  onClick={() => navigate("signin")}>
               Sign in
             </Button>
 
-            <Button variant="contained" size="large">
+            <Button variant="contained" size="large" onClick={() => navigate("/join")}>
               Join
             </Button>
           </Grid2>
