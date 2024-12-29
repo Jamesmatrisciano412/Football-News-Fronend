@@ -1,23 +1,9 @@
 import React from 'react';
 import "./Footer.css";
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
-import { Box, Divider, Grid2 } from '@mui/material';
+import { Box, Container, Divider, Grid2, Typography } from '@mui/material';
 import { Link } from 'react-router';
 import { Twitter, YouTube, Facebook, Instagram } from '@mui/icons-material';
-import Mark from "../../assets/images/sitemark.png";
 import { SiteSmallMark } from '../../compoents/SiteMark/SiteMark';
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-  ...theme.applyStyles('dark', {
-    backgroundColor: '#1A2027',
-  }),
-}));
 
 const followDatas = [
   {
@@ -48,15 +34,18 @@ const followDatas = [
 
 function Index() {
   return (
-    <Box>
-      <Grid2 container className="footer-container">
+    <Box className="footer-container">
+      <Container maxWidth="xl">
         <Grid2 size={12}>
-          <h2 className='follow-title'>Follow Football News</h2>
+          <Typography variant='h5' className='follow-title'>Follow Football News</Typography>
           <Grid2 container spacing={5} className="follow-container">
             {
               followDatas.map((item, key) => {
                 return (
-                  <Grid2 key={key} size={3} >
+                  <Grid2 key={key} size={{
+                    xs: 6,
+                    md: 3
+                  }} >
                     <Link to={item.url}>
                       <div>
                         <p>{item.icon}</p>
@@ -82,7 +71,7 @@ function Index() {
             </Grid2>
           </Grid2>
         </Grid2>
-      </Grid2 >
+      </Container >
     </Box >
   )
 }

@@ -1,9 +1,11 @@
 .header-container{
     position: sticky;
     top: 0;
-    padding: 1vh 12vw;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid #a19b9b66;
     background-color: white;
+    z-index: 1;
 }
 
 .user-container{

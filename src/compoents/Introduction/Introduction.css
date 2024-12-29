@@ -1,12 +1,10 @@
 .intro-container {
     display: flex;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    padding-right: 12vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .intro-container>div:first-child {
-    width: 12vw;
     padding-top: 4vh;
     padding-bottom: 4vh;
 }
@@ -21,11 +19,8 @@
 }
 
 .intro-detail-container {
+    margin-top: 2rem;
     display: flex;
-}
-
-.intro-detail-container>div:first-child {
-    width: 50%;
 }
 
 .intro-detail-container>div:first-child>ul {
@@ -37,61 +32,16 @@
 }
 
 .intro-detail-container>div:first-child>p:last-child {
-    font-size: 18px;
-    color: red;
+    text-align: center;
+    margin-top: 2rem;
+    color: #522db8;
 }
 
-.intro-detail-container>div:last-child {
-    position: relative;
-    width: 50%;
-}
-
-.intro-detail-container>div:last-child>img{
-    width: 20vw;
+.intro-detail-container > div:last-child>img{
+    width: 18rem;
+    height: 8rem;
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
-    position: absolute;
     background-color: white;
-}
-
-@keyframes kick-image {
-    from {right: 50px; display: none;}
-    to {right: 0px; display: block;}
-}
-
-@keyframes goal-image {
-    50% {top: 80px; right: 150px; opacity: 1;}
-    100% {top: 80px; right: 70px; opacity: 1;}
-}
-
-@keyframes wow-image {
-    from {top: 160px; right: 200px; opacity: 1;}
-    to {top: 160px; right: 140px; opacity: 1;}
-}
-
-.intro-detail-container > div:last-child>img:first-child{
-    animation-name: kick-image;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-}
-
-.intro-detail-container > div:last-child>img:nth-child(2){
-    animation-name: goal-image;
-    animation-duration: 1s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    opacity: 0;
-    top: 80px;
-    right: 150px;
-}
-
-.intro-detail-container > div:last-child>img:nth-child(3){
-    animation-name: wow-image;
-    animation-duration: 0.5s;
-    animation-delay: 2.5s;
-    animation-fill-mode: forwards;
-    opacity: 0;
-    top: 160px;
-    right: 200px;
 }
