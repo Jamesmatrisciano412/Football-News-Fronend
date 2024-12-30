@@ -37,7 +37,7 @@ function Index() {
     <Box className="footer-container">
       <Container maxWidth="xl">
         <Grid2 size={12}>
-          <Typography variant='h5' className='follow-title'>Follow Football News</Typography>
+          <Typography sx={{fontSize: {xs: "1rem", md: "1.5rem"}}} className='follow-title'>Follow Football News</Typography>
           <Grid2 container spacing={5} className="follow-container">
             {
               followDatas.map((item, key) => {

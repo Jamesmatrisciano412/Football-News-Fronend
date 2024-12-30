@@ -1,13 +1,19 @@
 import React from 'react';
 import "./LandJoin.css";
 import { Button } from '@mui/material';
+import { useNavigate } from 'react-router';
 
-function LandJoin() {
+function LandJoin(props) {
+
+  const {statement, linkeButton} = props;
+
+  const navigate = useNavigate();
+
   return (
     <div className='join-us-container'>
-        Welcome to Football News – your ultimate source for the latest football match results! <br/> Please join our community today to get live updates, expert analysis, and more. 
+        <div dangerouslySetInnerHTML={{ __html: statement.replace(/\n/g, '<br />')}}></div>
         <p>
-            <Button variant="outlined" size='large'>Join us</Button>
+            {linkeButton ? (<Button variant="outlined" size='large' onClick={() => navigate("/join")}>Join us</Button>) : ""}
         </p>
     </div>
   )
