@@ -17,7 +17,7 @@ function LeagueMatch(props) {
           fontSize: { xs: "1rem", md: "1.5rem" },
         }}
       >
-        <img src={info.mark} className="league-icon" /> {info.league}
+        <img alt="league mark" src={info.mark} className="league-icon" /> {info.league}
       </Grid2>
 
       <Grid2 container spacing={3} sx={{ marginTop: "1rem" }}>
@@ -54,7 +54,7 @@ function LeagueMatch(props) {
                             alignItems: "center",
                           }}
                         >
-                          <img src={item.teams[0].mark} />
+                          <img alt="team mark1" src={item.teams[0].mark} />
                         </Grid2>
                         <Grid2 size={9}>{item.teams[0].name}</Grid2>
                       </Grid2>
@@ -83,7 +83,7 @@ function LeagueMatch(props) {
                             alignItems: "center",
                           }}
                         >
-                          <img src={item.teams[1].mark} />
+                          <img alt="team mark2" src={item.teams[1].mark} />
                         </Grid2>
                         <Grid2 size={9}>{item.teams[1].name}</Grid2>
                       </Grid2>

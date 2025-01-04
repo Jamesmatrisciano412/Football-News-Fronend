@@ -8,10 +8,15 @@ import MenuItem from "@mui/material/MenuItem";
 import { Menu } from "@mui/material";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { useNavigate } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { Logout } from "@mui/icons-material";
+import { logoutSite } from "../../redux/reducers/userReducer";
 
 export default function Header() {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const authState = useSelector((state) => state.authState);
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -23,8 +28,14 @@ export default function Header() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    dispatch(logoutSite());
+    navigate("/");
+  };
+
   const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
+  const renderMobileMenu = !authState.isLogged ? (
     <Menu
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{
@@ -40,11 +51,31 @@ export default function Header() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem onClick={() => navigate("signin")}>
+      <MenuItem key={"signin"} onClick={() => navigate("/signin")}>
         <p>Sign in</p>
       </MenuItem>
-      <MenuItem onClick={() => navigate("/join")}>
+      <MenuItem key={"join"} onClick={() => navigate("/join")}>
         <p>Join</p>
+      </MenuItem>
+    </Menu>
+  ) : (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{
+        vertical: "top",
+        horizontal: "right",
+      }}
+      id={mobileMenuId}
+      //keepMounted
+      transformOrigin={{
+        vertical: "top",
+        horizontal: "right",
+      }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem key={"signout"} onClick={() => logout()}>
+        <p>Sign out</p>
       </MenuItem>
     </Menu>
   );
@@ -61,13 +92,32 @@ export default function Header() {
             sx={{ display: { xs: "none", md: "flex" } }}
             className="user-container"
           >
-            <Button variant="outlined" size="large"  onClick={() => navigate("signin")}>
-              Sign in
-            </Button>
+            {!authState.isLogged ? (
+              <>
+                <Button
+                  variant="outlined"
+                  size="large"
+                  onClick={() => navigate("signin")}
+                >
+                  Sign in
+                </Button>
+                <Button
+                  variant="contained"
+                  size="large"
+                  onClick={() => navigate("/join")}
+                >
+                  Join
+                </Button>
+              </>
+            ) : (
+              <>
+                {authState.fullname}
 
-            <Button variant="contained" size="large" onClick={() => navigate("/join")}>
-              Join
-            </Button>
+                <IconButton onClick={logout}>
+                  <Logout />
+                </IconButton>
+              </>
+            )}
           </Grid2>
           <Grid2
             size={{ xs: 1, md: 0 }}

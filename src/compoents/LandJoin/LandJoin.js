@@ -13,7 +13,7 @@ function LandJoin(props) {
     <div className='join-us-container'>
         <div dangerouslySetInnerHTML={{ __html: statement.replace(/\n/g, '<br />')}}></div>
         <p>
-            {linkeButton ? (<Button variant="outlined" size='large' onClick={() => navigate("/join")}>Join us</Button>) : ""}
+            {linkeButton ? (<Button variant="outlined" size='large' onClick={() => navigate("/signin")}>Sign in</Button>) : ""}
         </p>
     </div>
   )
