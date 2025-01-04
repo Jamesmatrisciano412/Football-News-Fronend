@@ -6,6 +6,7 @@ export const userSlice = createSlice({
     isLogged: false,
     email: "",
     fullname: "",
+    auth_token: ""
   },
   reducers: {
     loginSite: (state, data) => {
@@ -18,8 +19,11 @@ export const userSlice = createSlice({
       state.email = "";
       state.fullname = "";
     },
+    setAuthToken: (state, token) => {
+        state.auth_token = token.payload;
+    }
   },
 });
 
-export const { loginSite, logoutSite } = userSlice.actions;
+export const { loginSite, logoutSite, setAuthToken } = userSlice.actions;
 export default userSlice.reducer;

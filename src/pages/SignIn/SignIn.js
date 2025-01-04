@@ -138,6 +138,7 @@ export default function SignIn() {
             fullname: res.data.data.fullname
           }
         ));
+        api.defaults.headers.common["auth-token"] = `${res.data.data.token}`;
 
         setTimeout(() => {
           navigate("/matchstanding");
