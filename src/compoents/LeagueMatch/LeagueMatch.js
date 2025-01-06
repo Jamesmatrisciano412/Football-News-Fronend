@@ -100,7 +100,7 @@ function LeagueMatch(props) {
                     }}
                   >
                     <Grid2>
-                      <Typography sx={{ textAlign: "center" }}>
+                      <Typography sx={{ textAlign: "center", fontSize: {xs: "0.8rem", md: "1rem"} }}>
                         {dayjs(item.date).format("DD/MM/YYYY").toString()}
                       </Typography>
                       <Typography sx={{ textAlign: "center" }}>

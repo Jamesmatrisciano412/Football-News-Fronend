@@ -228,6 +228,7 @@ export default function Joinpage() {
                 fullWidth
                 label="Full Name"
                 name="fullname"
+                type="text"
                 value={formData.fullname}
                 onChange={handleInputChange}
                 slotProps={{
