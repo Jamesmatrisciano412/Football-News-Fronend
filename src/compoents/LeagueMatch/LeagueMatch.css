@@ -16,3 +16,7 @@
 .match-cell > div > div:first-child{
     margin-bottom: 10px;
 }
+
+.team-info > div > img{
+    width: 2rem;
+}

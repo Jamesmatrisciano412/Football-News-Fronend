@@ -1,8 +1,9 @@
-import { Box, Grid2, Typography } from "@mui/material";
+import { Box, Divider, Grid2, Typography } from "@mui/material";
 import React from "react";
 import "./LeagueMatch.css";
-import {Button} from "@mui/material";
-import { KeyboardDoubleArrowRight } from "@mui/icons-material";
+// import {Button} from "@mui/material";
+// import { KeyboardDoubleArrowRight } from "@mui/icons-material";
+import dayjs from "dayjs";
 
 function LeagueMatch(props) {
   const { info } = props;
@@ -58,7 +59,7 @@ function LeagueMatch(props) {
                         </Grid2>
                         <Grid2 size={9}>{item.teams[0].name}</Grid2>
                       </Grid2>
-                      <Grid2 size={1}>{item.result[0]}</Grid2>
+                      <Grid2 size={1}>{item.result[0] == null ? "" : item.result[0]}</Grid2>
                     </Grid2>
                     <Grid2
                       container
@@ -87,7 +88,7 @@ function LeagueMatch(props) {
                         </Grid2>
                         <Grid2 size={9}>{item.teams[1].name}</Grid2>
                       </Grid2>
-                      <Grid2 size={1}>{item.result[1]}</Grid2>
+                      <Grid2 size={1}>{item.result[1] == null ? "" : item.result[1]}</Grid2>
                     </Grid2>
                   </Grid2>
                   <Grid2
@@ -100,7 +101,7 @@ function LeagueMatch(props) {
                   >
                     <Grid2>
                       <Typography sx={{ textAlign: "center" }}>
-                        {item.date.format("DD/MM/YYYY").toString()}
+                        {dayjs(item.date).format("DD/MM/YYYY").toString()}
                       </Typography>
                       <Typography sx={{ textAlign: "center" }}>
                         {item.other}
@@ -113,8 +114,9 @@ function LeagueMatch(props) {
           : ""}
       </Grid2>
 
-      <Grid2 size={12} sx={{marginTop: "1rem", marginBottom: "0.5rem"}}>
-        <Button sx={{textTransform: "none"}}>Go to "{info.league}" Standing <KeyboardDoubleArrowRight /></Button>
+      <Grid2 size={12} sx={{marginTop: "1rem", marginBottom: "1.5rem"}}>
+        <Divider />
+        {/* <Button sx={{textTransform: "none"}}>Go to "{info.league}" Standing <KeyboardDoubleArrowRight /></Button> */}
       </Grid2>
     </Box>
   );
